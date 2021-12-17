@@ -8,11 +8,13 @@ using namespace std;
 
 void CoffeeMachine::displayCurrentResources(CoffeeMachine &c)
 {
-    cout << "Your coffee machine has the following resources:" << endl << endl;
+    cout << "-----------------------------------------------------" << endl;
+    cout << "---Your coffee machine has the following resources---" << endl;
     cout << "-----------------------------------------------------" << endl;
     cout << "Beans: " << c.hopper.beans << " grams of beans" << endl;
     cout << "Current Heat: " << c.heater.heat << " degrees Celsius" << endl;
     cout << "Water Level: " << c.waterReservoir.water << " liter(s)" << endl;
+    cout << "-----------------------------------------------------" << endl;
 }
 
 int CoffeeMachine::input(CoffeeMachine &c)
@@ -82,6 +84,7 @@ float CoffeeMachine::dripWater(CoffeeMachine &c)
         return 0;
     }
     c.waterReservoir.water -= water;
+    cout << "Water level is at " << c.waterReservoir.water << "L" << endl; 
     return water; 
 
 
